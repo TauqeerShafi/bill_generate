@@ -1,0 +1,39 @@
+<!-- HTML File: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing & Sales Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Billing & Sales Management</h1>
+    
+    <!-- Product Management Section -->
+    <section id="product-management">
+        <h2>Manage Products</h2>
+        <input type="text" id="productName" placeholder="Product Name">
+        <input type="number" id="productPrice" placeholder="Price">
+        <input type="number" id="productStock" placeholder="Stock">
+        <button onclick="addProduct()">Add Product</button>
+        
+        <h3>Product List</h3>
+        <ul id="productList"></ul>
+    </section>
+    
+    <!-- Sales Management Section -->
+    <section id="sales-management">
+        <h2>Sales</h2>
+        <select id="selectProduct"></select>
+        <input type="number" id="quantity" placeholder="Quantity">
+        <button onclick="addToCart()">Add to Cart</button>
+        
+        <h3>Cart</h3>
+        <ul id="cartList"></ul>
+        <button onclick="generateBill()">Generate Bill</button>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
