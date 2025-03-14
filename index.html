@@ -1,37 +1,53 @@
-<!-- HTML File: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Billing & Sales Management</title>
+    <title>মা ডিজিটাল স্টুডিও - বিলিং ও সেলস ম্যানেজমেন্ট</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Billing & Sales Management</h1>
+    <header>
+        <h1>মা ডিজিটাল স্টুডিও</h1>
+        <p>ঠিকানা: ধলাপাড়া বাজার, ঘাটাইল, টাঙ্গাইল</p>
+        <p> প্রোপ্রাইটর: দিপু আহম্মেদ</p>
+        <p>যোগাযোগ: 01751-298460</p>
+    </header>
     
     <!-- Product Management Section -->
     <section id="product-management">
-        <h2>Manage Products</h2>
-        <input type="text" id="productName" placeholder="Product Name">
-        <input type="number" id="productPrice" placeholder="Price">
-        <input type="number" id="productStock" placeholder="Stock">
-        <button onclick="addProduct()">Add Product</button>
+        <h2>প্রোডাক্ট ম্যানেজমেন্ট</h2>
+        <input type="text" id="productName" placeholder="প্রোডাক্টের নাম">
+        <input type="number" id="productPrice" placeholder="দাম (টাকা)">
+        <input type="file" id="productImage" accept="image/*" placeholder="প্রোডাক্টের ছবি">
+        <button onclick="addProduct()">প্রোডাক্ট যোগ করুন</button>
         
-        <h3>Product List</h3>
+        <h3>প্রোডাক্ট তালিকা</h3>
+        <input type="text" id="searchProduct" placeholder="প্রোডাক্ট খুঁজুন" oninput="searchProduct()">
         <ul id="productList"></ul>
     </section>
     
     <!-- Sales Management Section -->
     <section id="sales-management">
-        <h2>Sales</h2>
+        <h2>বিক্রয়</h2>
+        <input type="text" id="customerName" placeholder="কাস্টমারের নাম">
         <select id="selectProduct"></select>
-        <input type="number" id="quantity" placeholder="Quantity">
-        <button onclick="addToCart()">Add to Cart</button>
+        <input type="number" id="quantity" placeholder="পরিমাণ">
+        <button onclick="addToCart()">কার্টে যোগ করুন</button>
+        <button onclick="addCustomProduct()">কাস্টম পন্য যোগ করুন</button>
         
-        <h3>Cart</h3>
+        <h3>কার্ট</h3>
         <ul id="cartList"></ul>
-        <button onclick="generateBill()">Generate Bill</button>
+        <button onclick="generateBill()">বিল জেনারেট করুন</button>
+        <button onclick="clearCart()">নতুন বিল</button>
+    </section>
+    
+    <!-- Sales History Section -->
+    <section id="sales-history">
+        <h2>বিক্রয় হিসাব</h2>
+        <button onclick="showDailySales()">আজকের বিক্রয়</button>
+        <button onclick="showMonthlySales()">এই মাসের বিক্রয়</button>
+        <ul id="salesHistoryList"></ul>
     </section>
     
     <script src="script.js"></script>
